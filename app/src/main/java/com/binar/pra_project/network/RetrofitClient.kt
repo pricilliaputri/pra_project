@@ -1,6 +1,6 @@
 package com.binar.pra_project.network
 
-import com.google.firebase.functions.dagger.Provides
+import com.google.android.datatransport.runtime.dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
