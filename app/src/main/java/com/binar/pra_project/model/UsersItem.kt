@@ -3,7 +3,7 @@ package com.binar.pra_project.model
 
 import com.google.gson.annotations.SerializedName
 
-data class UserItem(
+data class UsersItem(
     @SerializedName("createdAt")
     val createdAt: String,
     @SerializedName("email")
