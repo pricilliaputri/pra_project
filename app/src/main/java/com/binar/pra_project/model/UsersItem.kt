@@ -2,6 +2,7 @@ package com.binar.pra_project.model
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class UsersItem(
     @SerializedName("createdAt")
@@ -16,4 +17,4 @@ data class UsersItem(
     val name: String,
     @SerializedName("password")
     val password: String
-)
+):Serializable

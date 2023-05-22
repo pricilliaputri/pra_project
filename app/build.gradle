@@ -1,10 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    // Make sure that you have the Google services Gradle plugin
-    id 'com.google.gms.google-services'
-    // Add the Crashlytics Gradle plugin
-    id 'com.google.firebase.crashlytics'
+    id 'kotlin-kapt'
 
 }
 
@@ -62,11 +59,7 @@ dependencies {
     //load gambar online
     implementation 'com.github.bumptech.glide:glide:4.12.0'
 
-    // Import the BoM for the Firebase platform
-    implementation platform('com.google.firebase:firebase-bom:32.0.0')
-
-    // Add the dependencies for the Crashlytics and Analytics libraries
-    // When using the BoM, you don't specify versions in Firebase library dependencies
+    //crashlytics
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
 
@@ -81,6 +74,16 @@ dependencies {
     implementation "androidx.room:room-runtime:2.5.0-beta01"
     implementation "androidx.room:room-ktx:2.4.2"
     implementation "androidx.room:room-paging:2.4.2"
+
+
+    // Dagger and Hilt
+    implementation "com.google.dagger:hilt-android:2.45"
+    kapt "com.google.dagger:hilt-android-compiler:2.45"
+
+
+
+
+
 
 
 }

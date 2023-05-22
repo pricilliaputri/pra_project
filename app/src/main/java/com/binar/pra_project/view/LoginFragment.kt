@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.binar.pra_project.R
 
 
-class FavoriteFragment : Fragment() {
+class LoginFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -16,7 +16,7 @@ class FavoriteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorite, container, false)
+        return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
 

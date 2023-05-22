@@ -1,6 +1,7 @@
 package com.binar.pra_project.network
 
-import com.google.android.datatransport.runtime.dagger.Provides
+
+import dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -8,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 object RetrofitClient {
-    private const val BASE_URL = "https:/646b1d797d3c1cae4ce33622.mockapi.io/users"
+    private const val BASE_URL = "https:/646b1d797d3c1cae4ce33622.mockapi.io/"
 
     private val logging: HttpLoggingInterceptor
         get() {
@@ -22,7 +23,7 @@ object RetrofitClient {
 
 
     @Singleton
-    @Provides
+        @Provides
     fun provideRetrofit(): Retrofit =
         Retrofit.Builder()
             .baseUrl(BASE_URL)
