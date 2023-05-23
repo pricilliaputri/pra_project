@@ -1,14 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ProfileFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.ProfileFragment"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="25dp">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profil"
+        android:textSize="40sp"
+        android:textColor="@color/black"/>
 
-</FrameLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:minHeight="48dp"
+        app:boxCornerRadiusBottomEnd="36dp"
+        app:boxCornerRadiusTopEnd="36dp"
+        app:boxCornerRadiusBottomStart="36dp"
+        app:boxCornerRadiusTopStart="36dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Nama User"
+            android:padding="5dp"
+            android:textColorHint="#80D5D505"
+            android:textSize="18sp"
+            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:minHeight="48dp"
+        app:boxCornerRadiusBottomEnd="36dp"
+        app:boxCornerRadiusTopEnd="36dp"
+        app:boxCornerRadiusBottomStart="36dp"
+        app:boxCornerRadiusTopStart="36dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNameLong"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Nama Lengkap"
+            android:padding="5dp"
+            android:textColorHint="#80D5D505"
+            android:textSize="18sp"
+            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:minHeight="48dp"
+        app:boxCornerRadiusBottomEnd="36dp"
+        app:boxCornerRadiusTopEnd="36dp"
+        app:boxCornerRadiusBottomStart="36dp"
+        app:boxCornerRadiusTopStart="36dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDateBirth"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Tanggal Lahir"
+            android:padding="5dp"
+            android:textColorHint="#80D5D505"
+            android:textSize="18sp"
+            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:minHeight="48dp"
+        app:boxCornerRadiusBottomEnd="36dp"
+        app:boxCornerRadiusTopEnd="36dp"
+        app:boxCornerRadiusBottomStart="36dp"
+        app:boxCornerRadiusTopStart="36dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etAddress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Alamat"
+            android:padding="5dp"
+            android:textColorHint="#80D5D505"
+            android:textSize="18sp"
+            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_marginTop="15dp"
+        android:text="Perbarui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_marginTop="15dp"
+        android:text="Keluar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
