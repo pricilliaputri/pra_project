@@ -11,4 +11,7 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="favorite">Favorite</string>
+    <string name="product_name">Product name</string>
+    <string name="product_price">product price</string>
 </resources>
