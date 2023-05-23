@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.navigation.Navigation
 import com.binar.pra_project.R
 import com.binar.pra_project.databinding.FragmentRegisterBinding
+import com.google.firebase.auth.FirebaseAuth
 
 
 class RegisterFragment : Fragment() {
@@ -30,44 +31,38 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        firebaseAuth = FirebaseAuth.getInstance()
         pref = requireActivity().getSharedPreferences("Regist", Context.MODE_PRIVATE)
-        binding.btnRegister.setOnClickListener {
-//            register()
+        binding.btnDaftar.setOnClickListener {
+            register()
 
         }
 
     }
 
-//    private fun register() {
-//        val username = binding.usernameEditText.text.toString()
-//        val email = binding.emailEditText.text.toString()
-//        val pass = binding.passEditText.text.toString()
-//        val confirmpass = binding.confirmpassEditText.text.toString()
-//        val addAkun = pref.edit()
-//        addAkun.putString("username", username)
-//
-//
-//
-//        if (username.isNotEmpty() && email.isNotEmpty() && pass.isNotEmpty() && confirmpass.isNotEmpty()) {
-//            if (pass == confirmpass) {
-//                addAkun.apply()
-//                firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
-//                    if (it.isSuccessful) {
+    private fun register() {
+        val username = binding.txtInputLayoutNama.text.toString()
+        val email = binding.txtInputLayoutEmail.text.toString()
+        val pass = binding.txtInputLayoutPassword.text.toString()
+        val confirmpass = binding.txtInputLayoutConfirmpass.text.toString()
+        val addAkun = pref.edit()
+        addAkun.putString("username", username)
+
+
+
+        if (username.isNotEmpty() && email.isNotEmpty() && pass.isNotEmpty() && confirmpass.isNotEmpty()) {
+            if (pass == confirmpass) {
+                addAkun.apply()
+
 //                        Navigation.findNavController(binding.root)
 //                            .navigate(R.id.action_registerFragment_to_loginFragment)
-//                    } else {
-//                        Toast.makeText(context, it.exception.toString(), Toast.LENGTH_SHORT).show()
-//                    }
-//                }
-//
-//            } else {
-//                Toast.makeText(context, "Password Tidak Sesuai", Toast.LENGTH_LONG).show()
-//            }
-//        } else {
-//            Toast.makeText(context, "Maaf Data Belum Lengkap", Toast.LENGTH_SHORT).show()
-//        }
-//    }
+
+            } else {
+                Toast.makeText(context, "Password Tidak Sesuai", Toast.LENGTH_LONG).show()
+            }
+        } else {
+            Toast.makeText(context, "Maaf Data Belum Lengkap", Toast.LENGTH_SHORT).show()
+        }
+    }
 }
 
 

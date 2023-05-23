@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.binar.pra_project.R
-import com.binar.pra_project.databinding.FragmentProfileBinding
+import com.binar.pra_project.databinding.FragmentDetailBinding
 
 
-class ProfileFragment : Fragment() {
+class DetailFragment : Fragment() {
+    private lateinit var binding : FragmentDetailBinding
 
-    private lateinit var binding : FragmentProfileBinding
 
 
     override fun onCreateView(
@@ -19,7 +19,7 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentProfileBinding.inflate(layoutInflater,container,false)
+        binding = FragmentDetailBinding.inflate(layoutInflater,container,false)
         return binding.root
     }
 

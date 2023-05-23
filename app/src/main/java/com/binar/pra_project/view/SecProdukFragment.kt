@@ -6,9 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.binar.pra_project.R
+import com.binar.pra_project.databinding.FragmentLoginBinding
 
 
 class SecProdukFragment : Fragment() {
+
+    lateinit var binding: FragmentLoginBinding
 
 
     override fun onCreateView(
@@ -16,7 +19,8 @@ class SecProdukFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sec_produk, container, false)
+        binding = FragmentLoginBinding.inflate(layoutInflater,container,false)
+        return binding.root
     }
 
 

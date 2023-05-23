@@ -5,21 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.binar.pra_project.R
-import com.binar.pra_project.databinding.FragmentProfileBinding
+import com.binar.pra_project.databinding.FragmentSplashBinding
 
 
-class ProfileFragment : Fragment() {
-
-    private lateinit var binding : FragmentProfileBinding
+class SplashFragment : Fragment() {
+    private lateinit var binding : FragmentSplashBinding
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        binding = FragmentProfileBinding.inflate(layoutInflater,container,false)
+        binding = FragmentSplashBinding.inflate(layoutInflater,container, false)
         return binding.root
     }
 
