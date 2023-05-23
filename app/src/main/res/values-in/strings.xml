@@ -13,4 +13,14 @@
     <string name="favorite">Favorit</string>
     <string name="product_name">Nama produk</string>
     <string name="product_price">Harga produk</string>
+    <string name="profile">Profil</string>
+    <string name="nick_name">Nama Panggilan</string>
+    <string name="input_nick_name">Masukkan Nama Panggilan</string>
+    <string name="full_name_profile">Nama Lengkap</string>
+    <string name="input_full_name">Masukkan Nama Lengkap</string>
+    <string name="date_birth">Tanggal Lahir</string>
+    <string name="input_date_birth">Masukkan Tanggal Lahir</string>
+    <string name="address">Alamat</string>
+    <string name="input_address">Masukkan Alamat</string>
+    <string name="update">Perbarui</string>
 </resources>

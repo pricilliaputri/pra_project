@@ -1,121 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.ProfileFragment"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:padding="25dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
+        android:id="@+id/iv_tvprofile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profil"
-        android:textSize="40sp"
-        android:textColor="@color/black"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/profile"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_nick_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/nick_name"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_tvprofile" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="24dp"
-        android:minHeight="48dp"
-        app:boxCornerRadiusBottomEnd="36dp"
-        app:boxCornerRadiusTopEnd="36dp"
-        app:boxCornerRadiusBottomStart="36dp"
-        app:boxCornerRadiusTopStart="36dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:id="@+id/et_nama"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginTop="4dp"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:errorEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nick_name">
+
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etUname"
+            android:id="@+id/txt_input_layout_nama_prof"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Nama User"
-            android:padding="5dp"
-            android:textColorHint="#80D5D505"
-            android:textSize="18sp"
-            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+            android:layout_height="wrap_content"
+            android:hint="@string/input_nick_name"
+            android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/tv_full_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/full_name_profile"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_nama" />
+
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="24dp"
-        android:minHeight="48dp"
-        app:boxCornerRadiusBottomEnd="36dp"
-        app:boxCornerRadiusTopEnd="36dp"
-        app:boxCornerRadiusBottomStart="36dp"
-        app:boxCornerRadiusTopStart="36dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:id="@+id/et_full_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginTop="4dp"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:errorEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_full_name">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etNameLong"
+            android:id="@+id/txt_input_full_name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Nama Lengkap"
-            android:padding="5dp"
-            android:textColorHint="#80D5D505"
-            android:textSize="18sp"
-            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+            android:layout_height="wrap_content"
+            android:hint="@string/input_full_name"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_date_birth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/date_birth"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_full_name" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_date_birth"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginTop="5dp"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:errorEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date_birth">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_input_date_birth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_date_birth"
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="24dp"
-        android:minHeight="48dp"
-        app:boxCornerRadiusBottomEnd="36dp"
-        app:boxCornerRadiusTopEnd="36dp"
-        app:boxCornerRadiusBottomStart="36dp"
-        app:boxCornerRadiusTopStart="36dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etDateBirth"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Tanggal Lahir"
-            android:padding="5dp"
-            android:textColorHint="#80D5D505"
-            android:textSize="18sp"
-            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/address"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_date_birth" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="24dp"
-        android:minHeight="48dp"
-        app:boxCornerRadiusBottomEnd="36dp"
-        app:boxCornerRadiusTopEnd="36dp"
-        app:boxCornerRadiusBottomStart="36dp"
-        app:boxCornerRadiusTopStart="36dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:id="@+id/et_confrim_pass"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginTop="5dp"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:errorEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_address">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etAddress"
+            android:id="@+id/txt_input_layout_confirmpass"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Alamat"
-            android:padding="5dp"
-            android:textColorHint="#80D5D505"
-            android:textSize="18sp"
-            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+            android:layout_height="wrap_content"
+            android:hint="@string/input_address"
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnUpdate"
-        android:layout_marginTop="15dp"
-        android:text="Perbarui"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_marginTop="15dp"
-        android:text="Keluar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:id="@+id/btn_update"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_button_primary"
+        android:text="@string/update"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_confrim_pass" />
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/btn_update"
+        tools:layout_editor_absoluteX="32dp"
+        tools:ignore="UselessLeaf">
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

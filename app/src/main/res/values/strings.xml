@@ -14,4 +14,14 @@
     <string name="favorite">Favorite</string>
     <string name="product_name">Product name</string>
     <string name="product_price">product price</string>
+    <string name="profile">Profile</string>
+    <string name="nick_name">Nick Name</string>
+    <string name="input_nick_name">Input Nick Name</string>
+    <string name="full_name_profile">Full Name</string>
+    <string name="input_full_name">Input Full Name</string>
+    <string name="date_birth">Date Birth</string>
+    <string name="input_date_birth">Input Date Birth</string>
+    <string name="address">Address</string>
+    <string name="input_address">Input Address</string>
+    <string name="update">Update</string>
 </resources>
