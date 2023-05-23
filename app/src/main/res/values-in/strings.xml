@@ -8,4 +8,6 @@
     <string name="register">Daftar</string>
     <string name="email">Email</string>
     <string name="password">Kata sandi</string>
+    <string name="login">Masuk</string>
+    <string name="already_have_an_account">Sudah punya akun?</string>
 </resources>
