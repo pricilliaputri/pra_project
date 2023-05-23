@@ -10,20 +10,19 @@
         android:id="@+id/iv_iconback"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:src="@drawable/ic_button_arrowback"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/iv_tvdaftar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="50dp"
-        android:text="@string/register"
+        android:text="DAFTAR"
         android:textColor="@color/black"
         android:textSize="26sp"
         android:textStyle="bold"
@@ -34,9 +33,9 @@
         android:id="@+id/tv_nama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
-        android:text="@string/name"
+        android:text="Nama"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -63,17 +62,17 @@
             android:id="@+id/txt_input_layout_nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/full_name"
-            android:inputType="textPersonName" />
+            android:hint="Nama Lengkap"
+            android:inputType="textPersonName" />f
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/email"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Email"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -100,7 +99,7 @@
             android:id="@+id/txt_input_layout_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email"
+            android:hint="Email"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -108,9 +107,9 @@
         android:id="@+id/tv_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/password"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Password"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -138,7 +137,7 @@
             android:id="@+id/txt_input_layout_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password"
+            android:hint="Password"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -147,9 +146,9 @@
         android:id="@+id/tv_confirmpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/password_confirmation"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Konfirmasi Password"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -177,7 +176,7 @@
             android:id="@+id/txt_input_layout_confirmpass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password_confirmation"
+            android:hint="Konfirmasi Password"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -186,9 +185,9 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/shape_button_primary"
-        android:text="@string/register"
+        android:text="Daftar"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -199,36 +198,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="24dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/btn_daftar">
+        app:layout_constraintTop_toBottomOf="@id/btn_daftar"
+        tools:layout_editor_absoluteX="32dp">
+
+
+        <TextView
+            android:id="@+id/tv_punyaakun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sudah punya akun?"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_masukdisini"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Masuk di sini"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_masukdisini"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="138dp"
-        android:text="Masuk di sini"
-        android:textColor="@color/blue"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/tv_punyaakun"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="660dp" />
-
-    <TextView
-        android:id="@+id/tv_punyaakun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="74dp"
-        android:text="Sudah punya akun?"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintTop_toTopOf="@+id/btn_daftar"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="151dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

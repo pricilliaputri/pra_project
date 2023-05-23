@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation_shop">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_shop"
+    app:startDestination="@id/splashFragment">
 
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.binar.pra_project.view.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.binar.pra_project.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.binar.pra_project.view.RegisterFragment"
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.binar.pra_project.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_produkFragment"
+            app:destination="@id/produkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.binar.pra_project.view.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.binar.pra_project.view.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/histransaksiFragment"
+        android:name="com.binar.pra_project.view.HistransaksiFragment"
+        android:label="fragment_histransaksi"
+        tools:layout="@layout/fragment_histransaksi" />
+    <fragment
+        android:id="@+id/keranjangFragment"
+        android:name="com.binar.pra_project.view.KeranjangFragment"
+        android:label="fragment_keranjang"
+        tools:layout="@layout/fragment_keranjang" />
+    <fragment
+        android:id="@+id/produkFragment"
+        android:name="com.binar.pra_project.view.ProdukFragment"
+        android:label="fragment_produk"
+        tools:layout="@layout/fragment_produk" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.binar.pra_project.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/secProdukFragment"
+        android:name="com.binar.pra_project.view.SecProdukFragment"
+        android:label="fragment_sec_produk"
+        tools:layout="@layout/fragment_sec_produk" />
 </navigation>
