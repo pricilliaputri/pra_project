@@ -20,8 +20,20 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            android:id="@+id/action_homeFragment_to_produkFragment"
+            app:destination="@id/produkFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_secProdukFragment"
+            app:destination="@id/secProdukFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_histransaksiFragment"
+            app:destination="@id/histransaksiFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_keranjangFragment"
+            app:destination="@id/keranjangFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -51,6 +63,9 @@
         <action
             android:id="@+id/action_detailFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
@@ -61,17 +76,29 @@
         android:id="@+id/histransaksiFragment"
         android:name="com.binar.pra_project.view.HistransaksiFragment"
         android:label="fragment_histransaksi"
-        tools:layout="@layout/fragment_histransaksi" />
+        tools:layout="@layout/fragment_histransaksi" >
+        <action
+            android:id="@+id/action_histransaksiFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/keranjangFragment"
         android:name="com.binar.pra_project.view.KeranjangFragment"
         android:label="fragment_keranjang"
-        tools:layout="@layout/fragment_keranjang" />
+        tools:layout="@layout/fragment_keranjang" >
+        <action
+            android:id="@+id/action_keranjangFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/produkFragment"
         android:name="com.binar.pra_project.view.ProdukFragment"
         android:label="fragment_produk"
-        tools:layout="@layout/fragment_produk" />
+        tools:layout="@layout/fragment_produk" >
+        <action
+            android:id="@+id/action_produkFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.binar.pra_project.view.ProfileFragment"
@@ -81,5 +108,9 @@
         android:id="@+id/secProdukFragment"
         android:name="com.binar.pra_project.view.SecProdukFragment"
         android:label="fragment_sec_produk"
-        tools:layout="@layout/fragment_sec_produk" />
+        tools:layout="@layout/fragment_sec_produk" >
+        <action
+            android:id="@+id/action_secProdukFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
 </navigation>

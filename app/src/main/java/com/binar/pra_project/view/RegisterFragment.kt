@@ -53,8 +53,7 @@ class RegisterFragment : Fragment() {
             if (pass == confirmpass) {
                 addAkun.apply()
 
-//                        Navigation.findNavController(binding.root)
-//                            .navigate(R.id.action_registerFragment_to_loginFragment)
+                Navigation.findNavController(binding.root).navigate(R.id.action_registerFragment_to_loginFragment)
 
             } else {
                 Toast.makeText(context, "Password Tidak Sesuai", Toast.LENGTH_LONG).show()
