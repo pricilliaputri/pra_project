@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">pra_project</string>
+    <string name="hi_welcome">Halo, Selamat datang!</string>
 </resources>
