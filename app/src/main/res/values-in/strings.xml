@@ -2,4 +2,10 @@
 <resources>
     <string name="app_name">pra_project</string>
     <string name="hi_welcome">Halo, Selamat datang!</string>
+    <string name="name">Nama</string>
+    <string name="full_name">Nama lengkap</string>
+    <string name="password_confirmation">Konfirmasi kata sandi</string>
+    <string name="register">Daftar</string>
+    <string name="email">Email</string>
+    <string name="password">Kata sandi</string>
 </resources>
