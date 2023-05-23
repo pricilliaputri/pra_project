@@ -10,4 +10,7 @@
     <string name="password">Kata sandi</string>
     <string name="login">Masuk</string>
     <string name="already_have_an_account">Sudah punya akun?</string>
+    <string name="favorite">Favorit</string>
+    <string name="product_name">Nama produk</string>
+    <string name="product_price">Harga produk</string>
 </resources>
