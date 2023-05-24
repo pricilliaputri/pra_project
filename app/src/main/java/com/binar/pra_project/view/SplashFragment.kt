@@ -33,18 +33,18 @@ class SplashFragment : Fragment() {
         val getUser = pref.getString("username", "")
 
         if(getUser != "") {
-            var dataUsername = pref.getString("username", "username")
-            var bundle = Bundle()
+            val dataUsername = pref.getString("username", "username")
+            val bundle = Bundle()
             bundle.putString("username", dataUsername)
 
             Handler().postDelayed({
                 Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_homeFragment, bundle)
-            }, 3000)
+            }, 2000)
         }
         else {
             Handler().postDelayed({
                 Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_loginFragment)
-            }, 3000)
+            }, 2000)
         }
     }
 
