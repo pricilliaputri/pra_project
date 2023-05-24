@@ -1,4 +1,4 @@
-package com.binar.pra_project.view
+package com.binar.pra_project.view.ui
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -11,8 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.binar.pra_project.R
 import com.binar.pra_project.databinding.FragmentRegisterBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class RegisterFragment : Fragment() {
     lateinit var binding: FragmentRegisterBinding
     private lateinit var pref: SharedPreferences

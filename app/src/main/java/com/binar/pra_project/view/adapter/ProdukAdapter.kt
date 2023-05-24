@@ -1,4 +1,4 @@
-package com.binar.pra_project.view
+package com.binar.pra_project.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -23,6 +23,6 @@ class ProdukAdapter(private var listproduk : List<ProductsItem>) : RecyclerView.
     }
 
     override fun getItemCount(): Int {
-       return listproduk.size
+        return listproduk.size
     }
 }

@@ -1,4 +1,4 @@
-package com.binar.pra_project.view
+package com.binar.pra_project.view.ui
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -11,8 +11,9 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.binar.pra_project.R
 import com.binar.pra_project.databinding.FragmentSplashBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class SplashFragment : Fragment() {
     private lateinit var binding : FragmentSplashBinding
     lateinit var pref: SharedPreferences

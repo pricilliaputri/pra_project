@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.binar.pra_project.view.SplashFragment"
+        android:name="com.binar.pra_project.view.ui.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.binar.pra_project.view.HomeFragment"
+        android:name="com.binar.pra_project.view.ui.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.binar.pra_project.view.RegisterFragment"
+        android:name="com.binar.pra_project.view.ui.RegisterFragment"
         android:label="RegisterFragment" >
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.binar.pra_project.view.LoginFragment"
+        android:name="com.binar.pra_project.view.ui.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -63,7 +63,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.binar.pra_project.view.DetailFragment"
+        android:name="com.binar.pra_project.view.ui.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
         <action
@@ -75,12 +75,12 @@
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="com.binar.pra_project.view.FavoriteFragment"
+        android:name="com.binar.pra_project.view.ui.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/histransaksiFragment"
-        android:name="com.binar.pra_project.view.HistransaksiFragment"
+        android:name="com.binar.pra_project.view.ui.HistransaksiFragment"
         android:label="fragment_histransaksi"
         tools:layout="@layout/fragment_histransaksi" >
         <action
@@ -89,7 +89,7 @@
     </fragment>
     <fragment
         android:id="@+id/keranjangFragment"
-        android:name="com.binar.pra_project.view.KeranjangFragment"
+        android:name="com.binar.pra_project.view.ui.KeranjangFragment"
         android:label="fragment_keranjang"
         tools:layout="@layout/fragment_keranjang" >
         <action
@@ -98,7 +98,7 @@
     </fragment>
     <fragment
         android:id="@+id/produkFragment"
-        android:name="com.binar.pra_project.view.ProdukFragment"
+        android:name="com.binar.pra_project.view.ui.ProdukFragment"
         android:label="fragment_produk"
         tools:layout="@layout/fragment_produk" >
         <action
@@ -107,12 +107,12 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.binar.pra_project.view.ProfileFragment"
+        android:name="com.binar.pra_project.view.ui.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/secProdukFragment"
-        android:name="com.binar.pra_project.view.SecProdukFragment"
+        android:name="com.binar.pra_project.view.ui.SecProdukFragment"
         android:label="fragment_sec_produk"
         tools:layout="@layout/fragment_sec_produk" >
         <action

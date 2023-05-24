@@ -1,4 +1,4 @@
-package com.binar.pra_project.view
+package com.binar.pra_project.view.ui
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -11,8 +11,9 @@ import android.widget.Toast
 import androidx.navigation.Navigation
 import com.binar.pra_project.R
 import com.binar.pra_project.databinding.FragmentLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
     private lateinit var binding : FragmentLoginBinding
