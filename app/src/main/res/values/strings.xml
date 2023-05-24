@@ -24,4 +24,9 @@
     <string name="address">Address</string>
     <string name="input_address">Input Address</string>
     <string name="update">Update</string>
+    <string name="don_t_have_an_account_yet">Don\'t have an account yet?</string>
+    <string name="detail_product">Product Detail</string>
+    <string name="hp_bekas">Second Phone</string>
+    <string name="handphone">Handphone</string>
+    <string name="rp_2_000_0000">Rp.2.000.0000</string>
 </resources>

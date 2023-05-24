@@ -23,4 +23,9 @@
     <string name="address">Alamat</string>
     <string name="input_address">Masukkan Alamat</string>
     <string name="update">Perbarui</string>
+    <string name="don_t_have_an_account_yet">Belum punya akun?</string>
+    <string name="detail_product">Detail produk</string>
+    <string name="hp_bekas">HP bekas</string>
+    <string name="handphone">Handphone</string>
+    <string name="rp_2_000_0000">Rp.2.000.0000</string>
 </resources>

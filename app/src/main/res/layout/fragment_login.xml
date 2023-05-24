@@ -15,7 +15,8 @@
         android:layout_marginTop="30dp"
         android:src="@drawable/ic_button_arrowback"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/iv_tvmasuk"
@@ -23,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
-        android:text="Masuk"
+        android:text="@string/login"
         android:textColor="@color/black"
         android:textSize="26sp"
         android:textStyle="bold"
@@ -36,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
-        android:text="Email"
+        android:text="@string/email"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -63,7 +64,7 @@
             android:id="@+id/txt_input_layout_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="Password"
+        android:text="@string/password"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -101,7 +102,7 @@
             android:id="@+id/txt_input_layout_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -112,7 +113,7 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/shape_button_primary"
-        android:text="Masuk"
+        android:text="@string/login"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -133,8 +134,8 @@
             android:id="@+id/tv_belumpunya"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Belum punya akun?"
-            android:layout_marginRight="8dp"
+            android:text="@string/don_t_have_an_account_yet"
+            android:layout_marginEnd="8dp"
             android:textColor="@color/black"
             android:textSize="16sp"/>
 
@@ -142,7 +143,7 @@
             android:id="@+id/tv_daftar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Daftar di sini"
+            android:text="@string/register"
             android:textColor="@color/blue"
             android:textSize="16sp"
             android:textStyle="bold" />
