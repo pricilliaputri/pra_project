@@ -5,6 +5,7 @@ plugins {
     id 'com.google.gms.google-services'
     //Add the Crashlytics Gradle plugin
     id 'com.google.firebase.crashlytics'
+    id 'dagger.hilt.android.plugin'
 
 }
 
@@ -15,7 +16,7 @@ android {
     defaultConfig {
         applicationId "com.binar.pra_project"
         minSdk 24
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -103,6 +104,8 @@ dependencies {
     implementation "pl.droidsonroids.gif:android-gif-drawable:1.2.22"
     api 'com.google.android.material:material:1.1.0-alpha06'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
 
 
 

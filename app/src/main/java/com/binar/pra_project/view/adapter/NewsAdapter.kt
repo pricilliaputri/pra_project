@@ -27,6 +27,6 @@ class NewsAdapter(private var listNews : List<NewsUpdateItem>) : RecyclerView.Ad
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return listNews.size
     }
 }
