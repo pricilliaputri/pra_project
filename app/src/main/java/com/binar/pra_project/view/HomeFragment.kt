@@ -34,10 +34,18 @@ class HomeFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId){
 
-        R.id.keranjangFragment -> {
+        R.id.cart -> {
             findNavController().navigate(R.id.action_homeFragment_to_keranjangFragment)
             return true
         }
+            R.id.favorite -> {
+                findNavController().navigate(R.id.action_homeFragment_to_favoriteFragment)
+                return true
+            }
+            R.id.account -> {
+                findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+                return true
+            }
 
             else -> {super.onOptionsItemSelected(item)}
         }

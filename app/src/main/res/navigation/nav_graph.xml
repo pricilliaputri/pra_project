@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_homeFragment_to_keranjangFragment"
             app:destination="@id/keranjangFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
