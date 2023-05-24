@@ -1,6 +1,7 @@
 package com.binar.pra_project.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class ProductsItem(
     @SerializedName("category_productId")
@@ -17,4 +18,4 @@ data class ProductsItem(
     val price: String,
     @SerializedName("product_image")
     val productImage: String
-)
+):Serializable

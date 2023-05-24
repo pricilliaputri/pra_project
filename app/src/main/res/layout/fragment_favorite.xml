@@ -24,6 +24,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_favorite"
-        tools:listitem="@layout/listproduk"/>
+        tools:listitem="@layout/item_produk"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

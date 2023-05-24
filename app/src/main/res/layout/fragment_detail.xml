@@ -1,14 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.DetailFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/DetailProduct"
+        android:textSize="45sp"
+        android:layout_marginTop="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:text="Detail Product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/ImageProduct"
+        android:layout_below="@id/DetailProduct"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/product" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/NamaBarang"
+        android:textStyle="bold"
+        android:text="Handphone"
+        android:layout_below="@id/ImageProduct"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/HargaBarang"
+        android:text="Rp.2.000.0000"
+        android:layout_below="@id/NamaBarang"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/DescripBarang"
+        android:text="Hp Bekas"
+        android:layout_below="@id/HargaBarang"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_below="@id/DescripBarang"
+        android:src="@drawable/ic_baseline_shopping_cart_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"/>
+
+
+</RelativeLayout>
