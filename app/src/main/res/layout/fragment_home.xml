@@ -1,55 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.ui.HomeFragment">
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="17dp">
 
-        <!-- TODO: Update blank fragment layout -->
         <com.denzcoskun.imageslider.ImageSlider
             android:id="@+id/image_slider"
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="4dp"
             app:iss_auto_cycle="true"
-            app:iss_period="1000"
             app:iss_delay="1000"
-            app:iss_text_align="CENTER"/>
+            app:iss_period="1000"
+            app:iss_text_align="CENTER"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/dotIndi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_slider" />
+
         <TextView
-            android:id="@+id/newsUpdate"
-            android:text="News Upate"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/image_slider"
+            android:id="@+id/tvNews"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="News_Update"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dotIndi" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_newsUpdate"
-            android:layout_below="@id/newsUpdate"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:id="@+id/rvNewsUpdate"
+            android:layout_width="374dp"
+            android:layout_height="116dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNews" />
 
         <TextView
-            android:id="@+id/product"
-            android:layout_marginTop="10dp"
-            android:text="Product"
-            android:layout_below="@id/rv_newsUpdate"
+            android:id="@+id/tvProducts"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="27dp"
+            android:layout_marginTop="7dp"
+            android:text="Products"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvNewsUpdate" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_Product"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/product"
+            android:id="@+id/rvProducts"
+            android:layout_width="378dp"
+            android:layout_height="151dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvProducts"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/blue"
+            app:itemIconTint="#E91E63"
+            app:itemTextColor="@color/white"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.074"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_nav_menu"
+            tools:ignore="MissingConstraints" />
 
-    </RelativeLayout>
 
-</ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</RelativeLayout>

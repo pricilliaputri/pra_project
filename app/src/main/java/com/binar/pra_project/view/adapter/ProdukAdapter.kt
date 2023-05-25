@@ -1,10 +1,14 @@
 package com.binar.pra_project.view.adapter
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.binar.pra_project.R
 import com.binar.pra_project.databinding.ItemProdukBinding
 import com.binar.pra_project.model.ProductsItem
+import com.bumptech.glide.Glide
 
 class ProdukAdapter(private var listproduk : List<ProductsItem>) : RecyclerView.Adapter<ProdukAdapter.ViewHolder>() {
     class ViewHolder(var binding : ItemProdukBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -20,6 +24,17 @@ class ProdukAdapter(private var listproduk : List<ProductsItem>) : RecyclerView.
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.namaProduk.text = listproduk[position].name
         holder.binding.hargaProduk.text = listproduk[position].price
+        Glide.with(holder.itemView).load(listproduk[position].productImage).into(holder.binding.imgMovie)
+
+        holder.binding.detail.setOnClickListener {
+
+
+            val bundle = Bundle()
+            bundle.putSerializable("detail_product",listproduk[position])
+            Navigation.findNavController(it).navigate(R.id.action_homeFragment2_to_detailFragment, bundle)
+
+
+        }
     }
 
     override fun getItemCount(): Int {

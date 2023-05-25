@@ -6,24 +6,26 @@
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/drawable/custom_drawable.xml" value="0.1" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.1" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1" />
+        <entry key="..\:/KULIAH/pra_project/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/drawable/ic_button_arrowback.xml" value="0.1" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/drawable/imgslider_rounded.xml" value="0.1" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/drawable/shape_button_primary.xml" value="0.1" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/activity_main.xml" value="0.10552536231884058" />
+        <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/barnav.xml" value="0.12364130434782608" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/fragment_detail.xml" value="0.16666666666666666" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/fragment_favorite.xml" value="0.10552536231884058" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/fragment_histransaksi.xml" value="0.10552536231884058" />
-        <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/fragment_home.xml" value="0.14666666666666667" />
+        <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/fragment_keranjang.xml" value="0.16666666666666666" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/fragment_produk.xml" value="0.10552536231884058" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/fragment_register.xml" value="0.16666666666666666" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/fragment_sec_produk.xml" value="0.10552536231884058" />
-        <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/fragment_splash.xml" value="0.13858695652173914" />
+        <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/fragment_splash.xml" value="0.16666666666666666" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/home.xml" value="0.12364130434782608" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/item_news.xml" value="0.10416666666666667" />
-        <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/item_produk.xml" value="0.12364130434782608" />
+        <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/item_produk.xml" value="0.22" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/item_slide.xml" value="0.1" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/listproduk.xml" value="0.11666666666666667" />
         <entry key="..\:/KULIAH/pra_project/app/src/main/res/layout/register.xml" value="0.16666666666666666" />

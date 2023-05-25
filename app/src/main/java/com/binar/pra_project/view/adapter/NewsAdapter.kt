@@ -20,7 +20,7 @@ class NewsAdapter(private var listNews : List<NewsUpdateItem>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.tittleNewsUpdate.text = listNews[position].title
-        holder.binding.contentNewsUpdate.text = listNews[position].content
+        holder.binding.contentNewsUpdate.text = listNews[position].createdAt
 
         Glide.with(holder.itemView).load(listNews[position].newsImage).into(holder.binding.imgNewsUpdate)
 

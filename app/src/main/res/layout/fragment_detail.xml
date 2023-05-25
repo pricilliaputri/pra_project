@@ -4,23 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.ui.DetailFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/DetailProduct"
-        android:textSize="45sp"
-        android:layout_marginTop="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
+        android:layout_marginTop="35dp"
         android:text="@string/detail_product"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:textSize="45sp" />
+
     <ImageView
         android:id="@+id/ImageProduct"
-        android:layout_below="@id/DetailProduct"
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:layout_below="@id/DetailProduct"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginTop="150dp"
@@ -60,6 +62,7 @@
         android:layout_marginTop="10dp"
         android:layout_alignParentEnd="true"
         tools:ignore="ContentDescription" />
+
 
 
 </RelativeLayout>

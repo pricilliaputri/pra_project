@@ -3,44 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_shop"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/homeFragment2">
 
-    <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.binar.pra_project.view.ui.SplashFragment"
-        android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
-        <action
-            android:id="@+id/action_splashFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_splashFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.binar.pra_project.view.ui.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_produkFragment"
-            app:destination="@id/produkFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_secProdukFragment"
-            app:destination="@id/secProdukFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_histransaksiFragment"
-            app:destination="@id/histransaksiFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_keranjangFragment"
-            app:destination="@id/keranjangFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_favoriteFragment"
-            app:destination="@id/favoriteFragment" />
-    </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.binar.pra_project.view.ui.RegisterFragment"
@@ -118,5 +82,22 @@
         <action
             android:id="@+id/action_secProdukFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.binar.pra_project.view.ui.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment2_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_keranjangFragment"
+            app:destination="@id/keranjangFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 </navigation>

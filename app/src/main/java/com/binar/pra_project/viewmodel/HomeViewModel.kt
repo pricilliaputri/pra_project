@@ -1,35 +1,23 @@
 package com.binar.pra_project.viewmodel
 
-import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.binar.pra_project.model.NewsUpdateItem
 import com.binar.pra_project.model.ProductsItem
 import com.binar.pra_project.network.RestfulApi
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
 
+
 @HiltViewModel
-class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewModel() {
+class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewModel(){
 
     var livedatanews : MutableLiveData<List<NewsUpdateItem>?> = MutableLiveData()
 
-    fun getlivedatanews() : MutableLiveData<List<NewsUpdateItem>?> {
-
-        return livedatanews
-    }
-
     var livedataproduk : MutableLiveData<List<ProductsItem>?> = MutableLiveData()
-
-    fun getlivedataproduk() : MutableLiveData<List<ProductsItem>?>{
-        return livedataproduk
-    }
 
     fun getUpdateNews(){
         api.getNewsUpdate().enqueue(object : Callback<List<NewsUpdateItem>> {
@@ -52,7 +40,7 @@ class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewMode
     }
 
     fun getAllDataProduk(){
-        api.getProduct(1).enqueue(object : Callback<List<ProductsItem>>{
+        api.getProduct().enqueue(object : Callback<List<ProductsItem>>{
             override fun onResponse(
                 call: Call<List<ProductsItem>>,
                 response: Response<List<ProductsItem>>
@@ -73,7 +61,5 @@ class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewMode
 
         })
     }
-
-
 
 }

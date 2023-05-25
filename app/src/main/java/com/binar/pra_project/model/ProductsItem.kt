@@ -1,5 +1,6 @@
 package com.binar.pra_project.model
 
+
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 

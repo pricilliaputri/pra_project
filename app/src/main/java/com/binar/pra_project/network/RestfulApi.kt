@@ -12,10 +12,10 @@ interface RestfulApi {
 //    @GET("news")
 //    fun getAllNews(): Call<List<NewsUpdateItem>>
 //
-//    @GET("sliders/{id}")
-//    fun getSliderById(
-//        @Path("id") id : Int,
-//    ):Call<List<SlidersItem>>
+    @GET("sliders/{id}")
+    fun getSliderById(
+        @Path("id") id : Int,
+    ):Call<List<SlidersItem>>
 
     //Users
     @GET("users/{id}")
@@ -77,8 +77,8 @@ interface RestfulApi {
     fun getCategoryById(@Path("id") id: Int): Call<List<CategoryProductItem>>
 
     //Product
-    @GET("category_product/{id}/products")
-    fun getProduct(@Path("id") id: Int): Call<List<ProductsItem>>
+    @GET("category_product/1/products")
+    fun getProduct(): Call<List<ProductsItem>>
 
     @GET("category_product/{id}/products/{id_product}")
      fun getProductById(
@@ -86,9 +86,7 @@ interface RestfulApi {
         @Path("id_product") id_product: Int
     ): Call<List<ProductsItem>>
 
-    //Sliders
-    @GET("sliders")
-   fun getSliders():Call<List<SlidersItem>>
+
 
 
 }
