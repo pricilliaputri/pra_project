@@ -71,34 +71,4 @@ class HomeFragment : Fragment() {
             }
         })
     }
-
-
-
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.bottom_nav_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId){
-
-        R.id.cart -> {
-            findNavController().navigate(R.id.action_homeFragment2_to_keranjangFragment)
-            return true
-        }
-            R.id.favorite -> {
-                findNavController().navigate(R.id.action_homeFragment2_to_favoriteFragment)
-                return true
-            }
-            R.id.account -> {
-                findNavController().navigate(R.id.action_homeFragment2_to_profileFragment)
-                return true
-            }
-
-            else -> {super.onOptionsItemSelected(item)}
-        }
-    }
-
-
 }

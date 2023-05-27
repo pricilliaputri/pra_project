@@ -19,7 +19,7 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentProfileBinding.inflate(layoutInflater,container,false)
+        binding = FragmentProfileBinding.inflate(inflater, container,false)
         return binding.root
     }
 
