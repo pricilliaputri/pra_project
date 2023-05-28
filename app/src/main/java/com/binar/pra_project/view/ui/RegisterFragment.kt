@@ -1,7 +1,5 @@
 package com.binar.pra_project.view.ui
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,7 +26,7 @@ class RegisterFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentRegisterBinding.inflate(layoutInflater, container, false)
         return binding.root
@@ -39,7 +37,7 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        pref = requireActivity().getSharedPreferences("Regist", Context.MODE_PRIVATE)
-        vmuser= ViewModelProvider(this).get(UserViewModel::class.java)
+        vmuser= ViewModelProvider(this)[UserViewModel::class.java]
 
         binding.btnDaftar.setOnClickListener {
             register()

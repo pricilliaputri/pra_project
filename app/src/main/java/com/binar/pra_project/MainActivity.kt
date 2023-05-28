@@ -1,24 +1,11 @@
 package com.binar.pra_project
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.ViewGroup
-import android.widget.Button
-import androidx.databinding.DataBindingUtil.setContentView
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.binar.pra_project.databinding.ActivityMainBinding
-import com.binar.pra_project.view.ui.FavoriteFragment
-import com.binar.pra_project.view.ui.HomeFragment
-import com.binar.pra_project.view.ui.KeranjangFragment
-import com.binar.pra_project.view.ui.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -17,9 +17,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewModel(){
 
     var livedatanews : MutableLiveData<List<NewsUpdateItem>?> = MutableLiveData()
-
     var liveDetailNews: MutableLiveData<DataDetailNewsItem?> = MutableLiveData()
-
     var livedataproduk : MutableLiveData<List<ProductsItem>?> = MutableLiveData()
 
     fun getUpdateNews(){
