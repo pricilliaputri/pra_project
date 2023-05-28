@@ -1,55 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cardView"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="20dp"
-    android:background="?attr/selectableItemBackgroundBorderless"
-    android:elevation="3dp"
-    app:cardCornerRadius="15dp"
-    app:cardElevation="10dp">
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <variable
+            name = "news"
+            type = "com.binar.pra_project.model.NewsUpdateItem"/>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/white"
+        card_view:cardCornerRadius="10dp">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imgNewsUpdate"
-            android:layout_width="100dp"
+        <RelativeLayout
+            android:id="@+id/detail"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:id="@+id/imgNewsUpdate"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:src="@{news.newsImage}" />
 
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tittleNewsUpdate"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:text="TitleNewsUpdate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imgNewsUpdate"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tittleNewsUpdate"
+                style="@style/TextProductList"
+                android:layout_width="187dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/imgNewsUpdate"
+                android:text="@{news.title}"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/contentNewsUpdate"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:text="Content_newsUpdate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imgNewsUpdate"
-            app:layout_constraintTop_toBottomOf="@+id/tittleNewsUpdate" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/TanggalNewsUpdate"
+                android:layout_width="184dp"
+                android:layout_height="36dp"
+                android:layout_below="@+id/tittleNewsUpdate"
+                android:layout_marginLeft="13dp"
+                android:layout_toRightOf="@+id/imgNewsUpdate"
+                android:text="@{news.createdAt}" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</layout>

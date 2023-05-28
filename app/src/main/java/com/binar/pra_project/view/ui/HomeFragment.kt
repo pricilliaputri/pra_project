@@ -40,8 +40,8 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         pref = requireActivity().getSharedPreferences("Regist", Context.MODE_PRIVATE)
 
-        imageList.add(SlideModel("https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"))
-        imageList.add(SlideModel("https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg"))
+        imageList.add(SlideModel("https://media.hitekno.com/thumbs/2023/04/15/50264-samsung-galaxy-a54-5g-vs-samsung-galaxy-a53-5g/730x480-img-50264-samsung-galaxy-a54-5g-vs-samsung-galaxy-a53-5g.jpg"))
+        imageList.add(SlideModel("https://images.tokopedia.net/img/cache/500-square/VqbcmM/2021/11/23/58d62cd2-e918-48a8-b411-be80ca1aa068.jpg"))
 
         val sliderLayout = binding.imageSlider
         sliderLayout.setImageList(imageList)

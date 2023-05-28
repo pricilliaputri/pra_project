@@ -19,13 +19,19 @@ interface RestfulApi {
 
     //Users
     @GET("users/{id}")
-     fun getUserById(@Path("id") id: Int):Call<List<UsersItem>>
+     fun getAllUser():Call<List<UsersItem>>
 
     @POST("users")
-     fun postUser(): Call<List<UsersItem>>
+     fun postUser(@Body request: DataUser): Call<List<DataPostUser>>
 
     @PUT("users/{id}")
-    fun putUserById(@Path("id") id: Int):Call<List<UsersItem>>
+    fun putUserById(@Path("id") id: Int,@Body request: DataUser ):Call<List<DataPostUser>>
+
+    @GET("user/{id}")
+    fun getUserId(
+        @Path("id") userId: String
+    ) : Call<List<UsersItem>>
+
 
     //Transaction History
     @GET("users/{id}/transhistory")
@@ -68,6 +74,9 @@ interface RestfulApi {
     //News Update
     @GET("news_update")
     fun getNewsUpdate(): Call<List<NewsUpdateItem>>
+
+    @GET("news_update/{id}?")
+    fun getDetailNews(@Path("id") id:Int): Call<DataDetailNewsItem>
 
     //Category Product
     @GET("category_product")

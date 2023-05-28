@@ -24,14 +24,14 @@ class ProdukAdapter(private var listproduk : List<ProductsItem>) : RecyclerView.
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.namaProduk.text = listproduk[position].name
         holder.binding.hargaProduk.text = listproduk[position].price
-        Glide.with(holder.itemView).load(listproduk[position].productImage).into(holder.binding.imgMovie)
+        Glide.with(holder.itemView).load(listproduk[position].productImage).into(holder.binding.imgProduct)
 
-        holder.binding.detail.setOnClickListener {
+        holder.binding.cardView.setOnClickListener {
 
 
             val bundle = Bundle()
             bundle.putSerializable("detail_product",listproduk[position])
-            Navigation.findNavController(it).navigate(R.id.action_homeFragment2_to_detailFragment, bundle)
+            Navigation.findNavController(it).navigate(R.id.action_homeFragment2_to_detailProdukFragment,bundle)
 
 
         }

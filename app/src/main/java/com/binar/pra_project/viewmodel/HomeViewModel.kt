@@ -2,6 +2,7 @@ package com.binar.pra_project.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.binar.pra_project.model.DataDetailNewsItem
 import com.binar.pra_project.model.NewsUpdateItem
 import com.binar.pra_project.model.ProductsItem
 import com.binar.pra_project.network.RestfulApi
@@ -16,6 +17,8 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewModel(){
 
     var livedatanews : MutableLiveData<List<NewsUpdateItem>?> = MutableLiveData()
+
+    var liveDetailNews: MutableLiveData<DataDetailNewsItem?> = MutableLiveData()
 
     var livedataproduk : MutableLiveData<List<ProductsItem>?> = MutableLiveData()
 
@@ -34,6 +37,28 @@ class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewMode
 
             override fun onFailure(call: Call<List<NewsUpdateItem>>, t: Throwable) {
                 livedatanews.postValue(null)
+            }
+
+        })
+    }
+
+
+    fun getDetailNews(id: Int) {
+        api.getDetailNews(id).enqueue(object : Callback<DataDetailNewsItem> {
+            override fun onResponse(
+                call: Call<DataDetailNewsItem>,
+                response: Response<DataDetailNewsItem>
+            ) {
+                if (response.isSuccessful) {
+                    val responseBody = response.body()
+                    if (responseBody != null) {
+                        liveDetailNews.postValue(responseBody)
+                    }
+                }
+            }
+            override fun onFailure(call: Call<DataDetailNewsItem>, t: Throwable) {
+                liveDetailNews.postValue(null)
+
             }
 
         })

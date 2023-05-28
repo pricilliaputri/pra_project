@@ -12,42 +12,36 @@
     app:cardCornerRadius="15dp"
     app:cardElevation="10dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:id="@+id/detail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="346dp"
+        android:layout_height="150dp"
+        android:layout_margin="10dp">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imgMovie"
+            android:id="@+id/imgProduct"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_margin="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/RoundedSquare"
+            android:layout_marginRight="10dp"
             tools:src="@tools:sample/avatars" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/namaProduk"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             style="@style/TextProductList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/product_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgMovie"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_toRightOf="@id/imgProduct" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/hargaProduk"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             style="@style/TextProductList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/product_price"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgMovie"
-            app:layout_constraintTop_toBottomOf="@id/namaProduk" />
+           android:layout_below = "@+id/namaProduk"
+            android:layout_toRightOf="@+id/imgProduct" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

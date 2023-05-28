@@ -1,17 +1,16 @@
 package com.binar.pra_project.model
 
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
-data class NewsUpdateItem(
+data class DataDetailNewsItem(
     @SerializedName("content")
-    val content: String,
+    val content: String? = null,
     @SerializedName("createdAt")
-    val createdAt: String,
+    val createdAt: String? = null,
     @SerializedName("id_news")
-    val idNews: String,
+    val idNews: String? = null,
     @SerializedName("news_image")
-    val newsImage: String,
+    val newsImage: String? = null,
     @SerializedName("title")
-    val title: String
-): Serializable
+    val title: String? = null
+)

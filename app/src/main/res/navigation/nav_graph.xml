@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation_shop"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment2">
 
     <fragment
@@ -24,18 +24,6 @@
         <action
             android:id="@+id/action_loginFragment_to_produkFragment"
             app:destination="@id/produkFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.binar.pra_project.view.ui.DetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
-        <action
-            android:id="@+id/action_detailFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_detailFragment_to_favoriteFragment"
-            app:destination="@id/favoriteFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
@@ -64,11 +52,7 @@
         android:id="@+id/produkFragment"
         android:name="com.binar.pra_project.view.ui.ProdukFragment"
         android:label="fragment_produk"
-        tools:layout="@layout/fragment_produk" >
-        <action
-            android:id="@+id/action_produkFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_produk" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.binar.pra_project.view.ui.ProfileFragment"
@@ -78,18 +62,11 @@
         android:id="@+id/secProdukFragment"
         android:name="com.binar.pra_project.view.ui.SecProdukFragment"
         android:label="fragment_sec_produk"
-        tools:layout="@layout/fragment_sec_produk" >
-        <action
-            android:id="@+id/action_secProdukFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_sec_produk" />
     <fragment
         android:id="@+id/homeFragment2"
         android:name="com.binar.pra_project.view.ui.HomeFragment"
         android:label="HomeFragment" >
-        <action
-            android:id="@+id/action_homeFragment2_to_detailFragment"
-            app:destination="@id/detailFragment" />
         <action
             android:id="@+id/action_homeFragment2_to_favoriteFragment"
             app:destination="@id/favoriteFragment" />
@@ -99,5 +76,25 @@
         <action
             android:id="@+id/action_homeFragment2_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_detailNewsFragment"
+            app:destination="@id/detailNewsFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_detailProdukFragment"
+            app:destination="@id/detailProdukFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailNewsFragment"
+        android:name="com.binar.pra_project.view.ui.DetailNewsFragment"
+        android:label="fragment_detail_news"
+        tools:layout="@layout/fragment_detail_news" />
+    <fragment
+        android:id="@+id/detailProdukFragment"
+        android:name="com.binar.pra_project.view.ui.DetailProdukFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail_product" >
+        <action
+            android:id="@+id/action_detailProdukFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
     </fragment>
 </navigation>
