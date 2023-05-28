@@ -33,11 +33,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment
-        navController = navHostFragment.navController
-        val bottomNavView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-        setupWithNavController(bottomNavView, navController)
+//        val navHostFragment =
+//            supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment
+//        navController = navHostFragment.navController
+//        val bottomNavView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+//        setupWithNavController(bottomNavView, navController)
 
 //        val crashButton = Button(this)
 //        crashButton.text = "Test Crash"
@@ -75,6 +75,8 @@ class MainActivity : AppCompatActivity() {
 //            replace(R.id.container,fragment)
 //            commit()
 //
-//        }
-    }
+  }
+
 }
+
+

@@ -16,29 +16,13 @@ import javax.inject.Singleton
 object RetrofitClient {
     private const val BASE_URL = "https:/646b1d797d3c1cae4ce33622.mockapi.io/"
 
-    private val logging: HttpLoggingInterceptor
-        get() {
-            val httpLoggingInterceptor = HttpLoggingInterceptor()
-            return httpLoggingInterceptor.apply {
-                httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-            }
-        }
-
-    private val client = OkHttpClient.Builder().addInterceptor(logging).build()
-
-
     @Singleton
-        @Provides
-    fun provideRetrofit(): Retrofit =
-        Retrofit.Builder()
+    @get:Provides
+    val instance : RestfulApi by lazy {
+        val retrofit= Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            .client(client)
             .build()
-
-    @Singleton
-    @Provides
-    fun provideNewsApi(retrofit: Retrofit): RestfulApi =
         retrofit.create(RestfulApi::class.java)
-
+    }
 }
