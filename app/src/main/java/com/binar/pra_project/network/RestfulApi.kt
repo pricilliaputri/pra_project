@@ -87,7 +87,7 @@ interface RestfulApi {
 
     //Product
     @GET("category_product/1/products")
-    fun getProduct(): Call<List<ProductsItem>>
+    fun getProduct(id: Int): Call<List<ProductsItem>>
 
     @GET("category_product/{id}/products/{id_product}")
      fun getProductById(

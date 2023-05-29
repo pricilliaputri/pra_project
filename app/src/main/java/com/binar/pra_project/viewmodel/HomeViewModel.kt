@@ -63,7 +63,7 @@ class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewMode
     }
 
     fun getAllDataProduk(){
-        api.getProduct().enqueue(object : Callback<List<ProductsItem>>{
+        api.getProduct(id).enqueue(object : Callback<List<ProductsItem>>{
             override fun onResponse(
                 call: Call<List<ProductsItem>>,
                 response: Response<List<ProductsItem>>

@@ -64,10 +64,10 @@ class RegisterFragment : Fragment() {
                 Navigation.findNavController(binding.root).navigate(R.id.action_registerFragment_to_loginFragment)
 
             } else {
-                Toast.makeText(context, "Password Tidak Sesuai", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Password doesn't match", Toast.LENGTH_LONG).show()
             }
         } else {
-            Toast.makeText(context, "Maaf Data Belum Lengkap", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Sorry, Your Data's Incomplete", Toast.LENGTH_SHORT).show()
         }
     }
 }
