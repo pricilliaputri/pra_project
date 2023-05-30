@@ -3,6 +3,7 @@ package com.binar.pra_project.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.binar.pra_project.model.DataDetailNewsItem
+import com.binar.pra_project.model.DataDetailProductItem
 import com.binar.pra_project.model.NewsUpdateItem
 import com.binar.pra_project.model.ProductsItem
 import com.binar.pra_project.network.RestfulApi
@@ -19,6 +20,8 @@ class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewMode
     var livedatanews : MutableLiveData<List<NewsUpdateItem>?> = MutableLiveData()
     var liveDetailNews: MutableLiveData<DataDetailNewsItem?> = MutableLiveData()
     var livedataproduk : MutableLiveData<List<ProductsItem>?> = MutableLiveData()
+
+    var liveDetailProduk : MutableLiveData<DataDetailProductItem?> = MutableLiveData()
 
     fun getUpdateNews(){
         api.getNewsUpdate().enqueue(object : Callback<List<NewsUpdateItem>> {
@@ -63,7 +66,7 @@ class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewMode
     }
 
     fun getAllDataProduk(){
-        api.getProduct(id).enqueue(object : Callback<List<ProductsItem>>{
+        api.getProduct().enqueue(object : Callback<List<ProductsItem>>{
             override fun onResponse(
                 call: Call<List<ProductsItem>>,
                 response: Response<List<ProductsItem>>
@@ -83,6 +86,29 @@ class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewMode
             }
 
         })
+    }
+
+    fun getDetailProduk(id: Int){
+        api.getDetailProduct(id).enqueue(object : Callback<DataDetailProductItem>{
+            override fun onResponse(
+                call: Call<DataDetailProductItem>,
+                response: Response<DataDetailProductItem>
+            ) {
+                if (response.isSuccessful) {
+                    val responseBody = response.body()
+                    if (responseBody != null) {
+                        liveDetailProduk.postValue(responseBody)
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<DataDetailProductItem>, t: Throwable) {
+                liveDetailProduk.postValue(null)
+
+            }
+
+        })
+
     }
 
 }

@@ -30,36 +30,36 @@ class CategoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val getProductId = arguments?.getInt("ID_CATEGORY")
-        val getNameCategory = arguments?.getString("NAME_CATEGORY")
-        binding.tvCategory.text = getNameCategory
-        print(getProductId)
-        print(getNameCategory)
-        setLayoutCategory(getProductId!!)
+//        val getProductId = arguments?.getInt("ID_CATEGORY")
+//        val getNameCategory = arguments?.getString("NAME_CATEGORY")
+//        binding.tvCategory.text = getNameCategory
+//        print(getProductId)
+//        print(getNameCategory)
+//        setLayoutCategory(getProductId!!)
     }
 
     private fun setLayoutCategory(id : Int){
-        listItemCategoryyyVM.setCategoryList(id)
-
-        binding.rvListCategory.layoutManager = GridLayoutManager(requireContext(), 2)
-        listItemCategoryyyVM.listProduct.observe(viewLifecycleOwner){
-            when(it){
-                is Resource.Loading ->{
-                    binding.progressCategory.visibility = View.VISIBLE
-                }
-                is Resource.Error -> {
-                    binding.progressCategory.visibility = View.GONE
-                    Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
-                }
-
-                is Resource.Success -> {
-                    binding.progressCategory.visibility = View.GONE
-                    binding.contentCategory.visibility = View.VISIBLE
-                    binding.rvListCategory.adapter = ProdukAdapter(it.data!!)
-                }
-
-            }
-        }
-    }
+//        listItemCategoryyyVM.setCategoryList(id)
+//
+//        binding.rvListCategory.layoutManager = GridLayoutManager(requireContext(), 2)
+//        listItemCategoryyyVM.listProduct.observe(viewLifecycleOwner){
+//            when(it){
+//                is Resource.Loading ->{
+//                    binding.progressCategory.visibility = View.VISIBLE
+//                }
+//                is Resource.Error -> {
+//                    binding.progressCategory.visibility = View.GONE
+//                    Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
+//                }
+//
+//                is Resource.Success -> {
+//                    binding.progressCategory.visibility = View.GONE
+//                    binding.contentCategory.visibility = View.VISIBLE
+//                    binding.rvListCategory.adapter = ProdukAdapter(it.data!!)
+//                }
+//
+//            }
+//        }
+   }
 
 }

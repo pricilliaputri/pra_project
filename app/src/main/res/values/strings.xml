@@ -29,7 +29,5 @@
     <string name="hp_bekas">Second Phone</string>
     <string name="handphone">Handphone</string>
     <string name="rp_2_000_0000">Rp.2.000.0000</string>
-    <string name="news_update">News Update</string>
-    <string name="products">Products</string>
-    <string name="category_name">Category Name</string>
+    <string name="item">item</string>
 </resources>

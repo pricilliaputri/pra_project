@@ -22,10 +22,10 @@ interface RestfulApi {
      fun getAllUser():Call<List<UsersItem>>
 
     @POST("users")
-     fun postUser(@Body request: DataUser): Call<List<DataPostUser>>
+     fun postUser(@Body request: UsersItem): Call<List<DataPostUser>>
 
     @PUT("users/{id}")
-    fun putUserById(@Path("id") id: Int,@Body request: DataUser ):Call<List<DataPostUser>>
+    fun putUserById(@Path("id") id:String ):Call<UsersItem>
 
     @GET("user/{id}")
     fun getUserId(
@@ -47,10 +47,11 @@ interface RestfulApi {
 
     //Cart
     @GET("users/{id}/cart")
-     fun getUserCart(@Path("id") id: Int): Call<List<CartItem>>
+     fun getUserCart(@Path("id") id: String): Call<List<CartItem>>
 
     @POST("users/{id}/cart")
-    fun postCart(@Path("id") id: Int): Call<List<CartItem>>
+    fun postCart(@Path("id") id:String,
+                 @Body request: DataDetailProductItem) : Call <List<CartItem>>
 
     @DELETE("users/{id}/cart/{id_cart}")
      fun deleteCart(
@@ -87,13 +88,22 @@ interface RestfulApi {
 
     //Product
     @GET("category_product/1/products")
-    fun getProduct(id: Int): Call<List<ProductsItem>>
+    fun getProduct(): Call<List<ProductsItem>>
 
-    @GET("category_product/{id}/products/{id_product}")
-     fun getProductById(
-        @Path("id") id: Int,
-        @Path("id_product") id_product: Int
-    ): Call<List<ProductsItem>>
+    @GET("category_product/1/products/{id}?")
+    fun getDetailProduct(@Path("id") id:Int): Call<DataDetailProductItem>
+
+
+    @GET("users/{id}/transhistory")
+    suspend fun getDataHistoryTransaction(
+        @Path("id") id : Int,
+    ) : List<TransHistoryItem>
+
+    @POST("users/{id}/transhistory")
+    suspend fun insertDataHistoryTransaction(
+        @Path("id") id : Int,
+        @Body data :TransHistoryItem
+    ) : TransHistoryItem
 
 
 

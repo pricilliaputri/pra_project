@@ -3,10 +3,13 @@ package com.binar.pra_project.view.ui
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Handler
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import com.binar.pra_project.R
 import com.binar.pra_project.databinding.FragmentSplashBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -14,13 +17,13 @@ import dagger.hilt.android.AndroidEntryPoint
 class SplashFragment : Fragment() {
 
     lateinit var binding: FragmentSplashBinding
-    lateinit var pref: SharedPreferences
+//    lateinit var pref: SharedPreferences
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         // Inflate the layout for this fragment
         binding = FragmentSplashBinding.inflate(layoutInflater, container, false)
         return binding.root
@@ -29,8 +32,12 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        pref = requireActivity().getSharedPreferences("Regist", Context.MODE_PRIVATE)
-        val getUser = pref.getString("username", "")
+        Handler().postDelayed({
+                Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_homeFragment)
+            }, 2000)
+
+//        pref = requireActivity().getSharedPreferences("Regist", Context.MODE_PRIVATE)
+//        val getUser = pref.getString("username", "")
 
 //        if(getUser != "") {
 //            val dataUsername = pref.getString("username", "username")

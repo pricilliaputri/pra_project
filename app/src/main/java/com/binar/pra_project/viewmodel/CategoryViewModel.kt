@@ -15,23 +15,23 @@ import javax.inject.Inject
 @HiltViewModel
 class CategoryViewModel @Inject constructor(private val api : RestfulApi): ViewModel(){
 
-    private val listproduk: MutableLiveData<Resource<List<ProductsItem>>> = MutableLiveData()
-    val listProduct: LiveData<Resource<List<ProductsItem>>> get() = listproduk
-
-
-    fun setCategoryList(id: Int) = viewModelScope.launch {
-        try {
-
-            listproduk.postValue(Resource.Loading())
-
-            val response = api.getProduct(id)
-            listproduk.postValue(Resource.Success(response))
-
-        } catch(e: Exception) {
-            listproduk.postValue(Resource.Error(e.message!!))
-            Log.e("error", e.message!!)
-        }
-    }
+//    private val listproduk: MutableLiveData<Resource<List<ProductsItem>>> = MutableLiveData()
+//    val listProduct: LiveData<Resource<List<ProductsItem>>> get() = listproduk
+//
+//
+//    fun setCategoryList(id: Int) = viewModelScope.launch {
+//        try {
+//
+//            listproduk.postValue(Resource.Loading())
+//
+//            val response = api.getProduct(id)
+//            listproduk.postValue(Resource.Success(response))
+//
+//        } catch(e: Exception) {
+//            listproduk.postValue(Resource.Error(e.message!!))
+//            Log.e("error", e.message!!)
+//        }
+//    }
 
 
 }

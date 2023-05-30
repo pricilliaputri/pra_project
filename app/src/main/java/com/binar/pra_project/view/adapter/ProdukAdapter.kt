@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.binar.pra_project.R
 import com.binar.pra_project.databinding.ItemProdukBinding
@@ -12,6 +13,16 @@ import com.bumptech.glide.Glide
 
 class ProdukAdapter(private var listproduk : List<ProductsItem>) : RecyclerView.Adapter<ProdukAdapter.ViewHolder>() {
     class ViewHolder(var binding : ItemProdukBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bindProduct(itemProduct : ProductsItem){
+            binding.product = itemProduct
+            binding.cardView.setOnClickListener {
+                val bundle = Bundle().apply {
+                    putInt("ID", itemProduct.idProduct.toString().toInt())
+                }
+                it.findNavController().navigate(R.id.action_homeFragment_to_detailProdukFragment, bundle)
+            }
+
+        }
 
 
     }
@@ -22,19 +33,11 @@ class ProdukAdapter(private var listproduk : List<ProductsItem>) : RecyclerView.
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.namaProduk.text = listproduk[position].name
-        holder.binding.hargaProduk.text = listproduk[position].price
-        Glide.with(holder.itemView).load(listproduk[position].productImage).into(holder.binding.imgProduct)
+        holder.bindProduct(listproduk[position])
 
-        holder.binding.cardView.setOnClickListener {
+        Glide.with(holder.itemView).load(listproduk[position].productImage)
+            .into(holder.binding.imgProduct)
 
-
-            val bundle = Bundle()
-            bundle.putSerializable("detail_product",listproduk[position])
-            Navigation.findNavController(it).navigate(R.id.action_homeFragment2_to_detailProdukFragment,bundle)
-
-
-        }
     }
 
     override fun getItemCount(): Int {
