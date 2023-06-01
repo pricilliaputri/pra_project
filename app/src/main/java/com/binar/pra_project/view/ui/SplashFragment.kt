@@ -32,9 +32,9 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Handler().postDelayed({
-                Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_homeFragment)
-            }, 2000)
+//        Handler().postDelayed({
+//                Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_homeFragment)
+//            }, 2000)
 
 //        pref = requireActivity().getSharedPreferences("Regist", Context.MODE_PRIVATE)
 //        val getUser = pref.getString("username", "")

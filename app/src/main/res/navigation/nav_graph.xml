@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/registerFragment"
@@ -24,12 +24,19 @@
         <action
             android:id="@+id/action_loginFragment_to_produkFragment"
             app:destination="@id/produkFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.binar.pra_project.view.ui.FavoriteFragment"
         android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/histransaksiFragment"
         android:name="com.binar.pra_project.view.ui.HistransaksiFragment"
@@ -78,18 +85,25 @@
             app:destination="@id/favoriteFragment" />
     </fragment>
     <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.binar.pra_project.view.ui.SplashFragment"
-        android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
-        <action
-            android:id="@+id/action_splashFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        android:id="@+id/categoryFragment"
+        android:name="com.binar.pra_project.view.ui.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.binar.pra_project.view.ui.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/detailSecondFragment"
+        android:name="com.binar.pra_project.view.ui.DetailSecondFragment"
+        android:label="fragment_detail_second"
+        tools:layout="@layout/fragment_detail_second" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.binar.pra_project.view.ui.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_detailProdukFragment"
             app:destination="@id/detailProdukFragment" />
@@ -102,15 +116,8 @@
         <action
             android:id="@+id/action_homeFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailSecondFragment"
+            app:destination="@id/detailSecondFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/categoryFragment"
-        android:name="com.binar.pra_project.view.ui.CategoryFragment"
-        android:label="fragment_category"
-        tools:layout="@layout/fragment_category" />
-    <fragment
-        android:id="@+id/cartFragment"
-        android:name="com.binar.pra_project.view.ui.CartFragment"
-        android:label="fragment_cart"
-        tools:layout="@layout/fragment_cart" />
 </navigation>

@@ -14,8 +14,9 @@ import com.binar.pra_project.R
 import com.binar.pra_project.databinding.FragmentCartBinding
 import com.binar.pra_project.view.adapter.CartAdapter
 import com.binar.pra_project.viewmodel.CartViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class CartFragment : Fragment() {
 
     private lateinit var binding : FragmentCartBinding
@@ -35,9 +36,9 @@ class CartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        vmCart = ViewModelProvider(this).get(CartViewModel::class.java)
         pref = requireContext().getSharedPreferences("Regist", Context.MODE_PRIVATE)
         idUser = pref.getString("id","").toString()
+        getDataCart(idUser)
 
     }
 

@@ -53,6 +53,16 @@ interface RestfulApi {
     fun postCart(@Path("id") id:String,
                  @Body request: DataDetailProductItem) : Call <List<CartItem>>
 
+    @FormUrlEncoded
+    @POST("users/{id}/cart")
+    fun addCart(
+        @Path("id") id:String,
+        @Field("name") name:String,
+        @Field("product_image") productImage:String,
+        @Field("price") price:Int,
+        @Field("description") description:String,
+    ):Call<List<CartItem>>
+
     @DELETE("users/{id}/cart/{id_cart}")
      fun deleteCart(
         @Path("id") id: Int,
@@ -61,10 +71,26 @@ interface RestfulApi {
 
     //Favourite
     @GET("users/{id}/favourite")
-    fun getUserFavourite(@Path("id") id: Int): Call<List<FavouriteItem>>
+    fun getFavourite(@Path("id") id: String): Call<List<FavouriteItem>>
 
     @POST("users/{id}/favourite")
    fun postFavourite(@Path("id") id: Int):Call<List<FavouriteItem>>
+
+    @FormUrlEncoded
+    @POST("users/{id}/favourite")
+    fun addFavouriteProduct(
+        @Path("id") id:String,
+        @Field("name") name:String,
+        @Field("product_image") productImage:String,
+        @Field("price") price:Int,
+        @Field("description") description:String,
+    ):Call<FavouriteItem>
+
+    @DELETE("users/{userId}/favourite/{id}")
+    fun deleteFavouriteProduct(
+        @Path("userId") userId:String,
+        @Path("id") id:String
+    ):Call<FavouriteItem>
 
     @DELETE("users/{id}/cart/{id_fav}")
      fun deleteFavourite(
@@ -90,8 +116,14 @@ interface RestfulApi {
     @GET("category_product/1/products")
     fun getProduct(): Call<List<ProductsItem>>
 
+    @GET("category_product/2/products")
+    fun getProductSecond(): Call<List<ProductsItem>>
+
     @GET("category_product/1/products/{id}?")
-    fun getDetailProduct(@Path("id") id:Int): Call<DataDetailProductItem>
+    fun getDetailProduct(@Path("id") id:String): Call<DataDetailProductItem>
+
+    @GET("category_product/2/products/{id}?")
+    fun getDetailProductSecond(@Path("id") id:Int): Call<DataDetailProductItem>
 
 
     @GET("users/{id}/transhistory")

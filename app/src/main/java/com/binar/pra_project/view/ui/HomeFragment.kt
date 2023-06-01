@@ -7,13 +7,17 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.binar.pra_project.R
 import com.binar.pra_project.databinding.FragmentHomeBinding
 import com.binar.pra_project.view.adapter.NewsAdapter
 import com.binar.pra_project.view.adapter.ProdukAdapter
+import com.binar.pra_project.view.adapter.SecondProdukAdapter
 import com.binar.pra_project.viewmodel.HomeViewModel
 import com.denzcoskun.imageslider.models.SlideModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,6 +28,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var pref: SharedPreferences
+    //nav
+    private lateinit var navController: NavController
 
     val imageList =  arrayListOf<SlideModel>()
 
@@ -50,6 +56,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
         }
 
+
+
+
+
     }
 
     override fun onStart() {
@@ -66,7 +76,7 @@ class HomeFragment : Fragment() {
         })
 
         val viewModelProduct = ViewModelProvider(this).get(HomeViewModel::class.java)
-        viewModelProduct.getAllDataProduk()
+        viewModelProduct.getAllNewDataProduk()
         viewModelProduct.livedataproduk.observe(viewLifecycleOwner, Observer { productList ->
             if (productList != null) {
                 val productsAdapter = ProdukAdapter(productList)
@@ -74,5 +84,19 @@ class HomeFragment : Fragment() {
                 binding.rvProducts.adapter = productsAdapter
             }
         })
+
+
+        val viewmodelProductSecond = ViewModelProvider(this).get(HomeViewModel::class.java)
+        viewmodelProductSecond.getAllNewProdukSecond()
+        viewmodelProductSecond.livedataproduksecond.observe(viewLifecycleOwner, Observer { productsecondList->
+            if (productsecondList != null)    {
+                val produksecondadapter = SecondProdukAdapter(productsecondList)
+                binding.rvSecondProduct.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                binding.rvSecondProduct.adapter = produksecondadapter
+            }
+
+        })
     }
+
+
 }

@@ -67,17 +67,8 @@ class RegisterFragment : Fragment() {
         if (username.isEmpty() || email.isEmpty() || pass.isEmpty() || confirmpass.isEmpty()) {
             Toast.makeText(requireContext(), "Please fill all the field", Toast.LENGTH_SHORT).show()
         } else {
-            if (pass == confirmpass) {
-                vmuser.getregister(
-                    User = UsersItem(
-                        "$currentDateTime",
-                        email,
-                        "",
-                        "",
-                        username,
-                        pass
-                    )
-                )
+            if (pass== confirmpass) {
+                vmuser.getregister(User = UsersItem("$currentDateTime",email,"","",username,pass))
                 Toast.makeText(requireContext(), "Registration Success", Toast.LENGTH_SHORT)
                     .show()
                 findNavController().navigate(R.id.action_registerFragment_to_loginFragment)

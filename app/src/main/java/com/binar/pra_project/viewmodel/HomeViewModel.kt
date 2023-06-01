@@ -17,11 +17,15 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewModel(){
 
-    var livedatanews : MutableLiveData<List<NewsUpdateItem>?> = MutableLiveData()
+    var livedatanews : MutableLiveData<List<NewsUpdateItem>> = MutableLiveData()
     var liveDetailNews: MutableLiveData<DataDetailNewsItem?> = MutableLiveData()
-    var livedataproduk : MutableLiveData<List<ProductsItem>?> = MutableLiveData()
+    var livedataproduk : MutableLiveData<List<ProductsItem>> = MutableLiveData()
 
-    var liveDetailProduk : MutableLiveData<DataDetailProductItem?> = MutableLiveData()
+    var livedataproduksecond : MutableLiveData<List<ProductsItem>> = MutableLiveData()
+
+    var liveDetailProduk : MutableLiveData<DataDetailProductItem> = MutableLiveData()
+
+    var liveDetailProdukSecond : MutableLiveData<DataDetailProductItem> = MutableLiveData()
 
     fun getUpdateNews(){
         api.getNewsUpdate().enqueue(object : Callback<List<NewsUpdateItem>> {
@@ -32,12 +36,12 @@ class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewMode
                 if (response.isSuccessful) {
                     livedatanews.postValue(response.body())
                 } else {
-                    livedatanews.postValue(null)
+                    livedatanews.postValue(emptyList())
                 }
             }
 
             override fun onFailure(call: Call<List<NewsUpdateItem>>, t: Throwable) {
-                livedatanews.postValue(null)
+                livedatanews.postValue(emptyList())
             }
 
         })
@@ -65,7 +69,7 @@ class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewMode
         })
     }
 
-    fun getAllDataProduk(){
+    fun getAllNewDataProduk(){
         api.getProduct().enqueue(object : Callback<List<ProductsItem>>{
             override fun onResponse(
                 call: Call<List<ProductsItem>>,
@@ -75,40 +79,77 @@ class HomeViewModel @Inject constructor(private var api : RestfulApi) : ViewMode
                 if (response.isSuccessful) {
                     livedataproduk.postValue(response.body())
                 } else {
-                    livedataproduk.postValue(null)
+                    livedataproduk.postValue(emptyList())
                 }
 
             }
 
             override fun onFailure(call: Call<List<ProductsItem>>, t: Throwable) {
-                livedataproduk.postValue(null)
+                livedataproduk.postValue(emptyList())
 
             }
 
         })
     }
 
-    fun getDetailProduk(id: Int){
+    fun getDetailProduk(id:String){
         api.getDetailProduct(id).enqueue(object : Callback<DataDetailProductItem>{
             override fun onResponse(
                 call: Call<DataDetailProductItem>,
                 response: Response<DataDetailProductItem>
             ) {
                 if (response.isSuccessful) {
-                    val responseBody = response.body()
-                    if (responseBody != null) {
-                        liveDetailProduk.postValue(responseBody)
-                    }
+                        liveDetailProduk.postValue(response.body())
+
                 }
             }
 
             override fun onFailure(call: Call<DataDetailProductItem>, t: Throwable) {
-                liveDetailProduk.postValue(null)
 
             }
 
         })
 
+    }
+
+    fun getAllNewProdukSecond(){
+        api.getProductSecond().enqueue(object : Callback<List<ProductsItem>>{
+            override fun onResponse(
+                call: Call<List<ProductsItem>>,
+                response: Response<List<ProductsItem>>
+            ) {
+                if (response.isSuccessful) {
+                    livedataproduksecond.postValue(response.body())
+                } else {
+                    livedataproduksecond.postValue(emptyList())
+                }
+            }
+
+            override fun onFailure(call: Call<List<ProductsItem>>, t: Throwable) {
+                livedataproduksecond.postValue(emptyList())
+            }
+
+        })
+    }
+
+    fun getDetailProductSecond(id : Int){
+        api.getDetailProductSecond(id).enqueue(object : Callback<DataDetailProductItem>{
+            override fun onResponse(
+                call: Call<DataDetailProductItem>,
+                response: Response<DataDetailProductItem>
+            ) {
+                if (response.isSuccessful) {
+                        liveDetailProdukSecond.postValue(response.body())
+
+                }
+            }
+
+            override fun onFailure(call: Call<DataDetailProductItem>, t: Throwable) {
+
+
+            }
+
+        })
     }
 
 }

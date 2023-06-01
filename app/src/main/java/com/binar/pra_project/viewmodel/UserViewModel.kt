@@ -1,12 +1,14 @@
 package com.binar.pra_project.viewmodel
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import android.content.SharedPreferences
+import androidx.lifecycle.*
+import com.binar.pra_project.database.UserPreferences
 import com.binar.pra_project.model.DataPostUser
 import com.binar.pra_project.model.DataUser
 import com.binar.pra_project.model.UsersItem
 import com.binar.pra_project.network.RestfulApi
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -67,16 +69,5 @@ class UserViewModel @Inject constructor(private var api : RestfulApi) : ViewMode
 
         })
     }
-
-
-
-
-
-
-
-
-
-
-
 
 }

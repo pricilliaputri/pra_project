@@ -16,9 +16,8 @@ class ProdukAdapter(private var listproduk : List<ProductsItem>) : RecyclerView.
         fun bindProduct(itemProduct : ProductsItem){
             binding.product = itemProduct
             binding.cardView.setOnClickListener {
-                val bundle = Bundle().apply {
-                    putInt("ID", itemProduct.idProduct.toString().toInt())
-                }
+                val bundle = Bundle()
+                bundle.putSerializable("ID", itemProduct)
                 it.findNavController().navigate(R.id.action_homeFragment_to_detailProdukFragment, bundle)
             }
 
