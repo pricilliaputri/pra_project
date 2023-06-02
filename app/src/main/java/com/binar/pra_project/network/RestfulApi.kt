@@ -18,11 +18,12 @@ interface RestfulApi {
     ):Call<List<SlidersItem>>
 
     //Users
-    @GET("users/{id}")
-     fun getAllUser():Call<List<UsersItem>>
+    @GET("users")
+    fun getAllUsers(): Call<List<UsersItem>>
 
     @POST("users")
-     fun postUser(@Body request: UsersItem): Call<List<DataPostUser>>
+    fun postUser(@Body request: DataUsers): Call<List<DataPostUser>>
+
 
     @PUT("users/{id}")
     fun putUserById(@Path("id") id:String ):Call<UsersItem>

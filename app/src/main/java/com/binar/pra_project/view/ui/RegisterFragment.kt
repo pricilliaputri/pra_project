@@ -23,8 +23,6 @@ import java.time.LocalDateTime
 @AndroidEntryPoint
 class RegisterFragment : Fragment() {
     private lateinit var binding: FragmentRegisterBinding
-//    private lateinit var pref: SharedPreferences
-
     private lateinit var vmuser: UserViewModel
 
 
@@ -43,7 +41,7 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        pref = requireActivity().getSharedPreferences("Regist", Context.MODE_PRIVATE)
-        vmuser = ViewModelProvider(this).get(UserViewModel::class.java)
+         vmuser = ViewModelProvider(this).get(UserViewModel::class.java)
 
 
         binding.btnDaftar.setOnClickListener {
@@ -65,15 +63,15 @@ class RegisterFragment : Fragment() {
 
 
         if (username.isEmpty() || email.isEmpty() || pass.isEmpty() || confirmpass.isEmpty()) {
-            Toast.makeText(requireContext(), "Please fill all the field", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Isi Semua Kolom", Toast.LENGTH_SHORT).show()
         } else {
             if (pass== confirmpass) {
-                vmuser.getregister(User = UsersItem("$currentDateTime",email,"","",username,pass))
-                Toast.makeText(requireContext(), "Registration Success", Toast.LENGTH_SHORT)
+                vmuser.getregister(username, email, pass)
+                Toast.makeText(requireContext(), "Registrasi Berhasil", Toast.LENGTH_SHORT)
                     .show()
                 findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
             } else {
-                Toast.makeText(requireContext(), "Password not match", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Kata Sandi Tidak Sama", Toast.LENGTH_SHORT).show()
             }
         }
     }
